@@ -1,5 +1,7 @@
 # 🧱 VoxelCraft: Browser-Based Voxel Engine
 
+Developed by **Saintce** 🚀
+
 VoxelCraft is a technical demonstration of a Minecraft-inspired engine built using **TypeScript** and **Three.js**. The goal of this project is to explore how complex voxel environments, mob AI, and survival mechanics can be implemented efficiently in a web browser using modern web technologies like **Web Workers** and **Socket.io**.
 
 This project is a work in progress and is intentionally kept open-source for learning and community collaboration.
