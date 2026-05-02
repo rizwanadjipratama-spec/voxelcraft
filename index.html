@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>VoxelCraft - Beta Edition</title>
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body>
+    <div id="orientation-overlay">
+        <div class="rotate-icon"></div>
+        <p>PLEASE ROTATE YOUR DEVICE</p>
+        <span style="font-size: 0.4rem; opacity: 0.7;">Landscape Mode Required</span>
+    </div>
+
+    <div id="loading-screen">
+        <div id="loading-logo">VOXEL CRAFT</div>
+        <div class="spinner"></div>
+        <p id="loading-status">GENERATING INFINITE WORLD...</p>
+    </div>
+
+    <div id="menu">
+      <div id="menu-logo">VOXEL CRAFT</div>
+      <div id="menu-subtitle">BETA EDITION</div>
+      <div id="menu-buttons">
+        <button id="survival-btn" class="btn-mc">Play Survival</button>
+        <button id="creative-btn" class="btn-mc">Play Creative</button>
+        <div id="mp-section">
+            <div class="mp-label">MULTIPLAYER SERVER</div>
+            <input type="text" id="server-ip" value="http://localhost:3000">
+            <div id="mp-status">DISCONNECTED</div>
+        </div>
+        <button id="quit-btn" class="btn-mc">Quit Game</button>
+      </div>
+    </div>
+
+    <div id="pause-menu" style="display: none;">
+        <h2 style="margin-bottom: 20px; text-shadow: 4px 4px #000;">GAME PAUSED</h2>
+        <div id="settings-grid">
+            <div class="setting-item">
+                <label>FOV: <span id="fov-val">75</span></label>
+                <input type="range" id="fov-slider" min="50" max="110" value="75">
+            </div>
+            <div class="setting-item">
+                <label>SENSITIVITY: <span id="sens-val">100</span>%</label>
+                <input type="range" id="sens-slider" min="10" max="200" value="100">
+            </div>
+            <div class="setting-item">
+                <label>RENDER DISTANCE: <span id="render-val">8</span></label>
+                <input type="range" id="render-slider" min="2" max="14" value="8">
+            </div>
+        </div>
+        <button id="resume-btn" class="btn-mc" style="width: 300px; margin-top: 20px;">Resume Game</button>
+        <button id="menu-btn" class="btn-mc" style="width: 300px;">Quit to Title</button>
+    </div>
+
+    <div id="death-screen" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(139,0,0,0.7); z-index: 1000; flex-direction: column; align-items: center; justify-content: center; pointer-events: auto;">
+        <h1 style="font-size: 3rem; color: #fff; text-shadow: 4px 4px #000; margin-bottom: 20px;">YOU DIED!</h1>
+        <button id="respawn-btn" class="btn-mc" style="width: 300px;">Respawn</button>
+        <button id="title-btn" class="btn-mc" style="width: 300px;">Main Menu</button>
+    </div>
+
+    <div id="ui" style="display: none;">
+      <div id="crosshair"></div>
+      <div id="mining-progress"><div id="mining-bar"></div></div>
+      <div id="hud">
+        <div id="hearts" class="hud-row">
+            <div class="heart"></div><div class="heart"></div><div class="heart"></div><div class="heart"></div><div class="heart"></div>
+            <div class="heart"></div><div class="heart"></div><div class="heart"></div><div class="heart"></div><div class="heart"></div>
+        </div>
+        <div id="hunger" class="hud-row">
+            <div class="hunger"></div><div class="hunger"></div><div class="hunger"></div><div class="hunger"></div><div class="hunger"></div>
+            <div class="hunger"></div><div class="hunger"></div><div class="hunger"></div><div class="hunger"></div><div class="hunger"></div>
+        </div>
+      </div>
+      <div id="hotbar">
+        <div class="slot active" data-slot="1"></div><div class="slot" data-slot="2"></div><div class="slot" data-slot="3"></div>
+        <div class="slot" data-slot="4"></div><div class="slot" data-slot="5"></div><div class="slot" data-slot="6"></div>
+        <div class="slot" data-slot="7"></div><div class="slot" data-slot="8"></div><div class="slot" data-slot="9"></div>
+      </div>
+      <div id="inventory-gui"></div>
+      <div id="chat-container">
+          <div id="chat-messages"></div>
+          <input type="text" id="chat-input" placeholder="Press Enter to send..." maxlength="100">
+      </div>
+      <div id="mobile-controls">
+          <div id="joystick-base"><div id="joystick-knob"></div></div>
+          <div id="mobile-actions">
+              <button id="btn-jump" class="mobile-btn">JUMP</button>
+              <button id="btn-place" class="mobile-btn">PLACE</button>
+              <button id="btn-inv" class="mobile-btn">INV</button>
+          </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
